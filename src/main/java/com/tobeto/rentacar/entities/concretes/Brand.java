@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 public class Brand extends BaseEntity<Integer> {
 
 	
+	
 	@Column(name="name")
 	private String name;
 	
@@ -31,3 +32,11 @@ public class Brand extends BaseEntity<Integer> {
 	
 
 }
+
+
+
+
+
+
+
+

@@ -25,8 +25,9 @@ import lombok.NoArgsConstructor;
 public class Model extends BaseEntity<Integer> {
 
 	
+	
 	@Column(name="name")
-	private String name; //A6
+	private String name; //A6 
 	
 	@ManyToOne
 	@JoinColumn(name="brandId")
