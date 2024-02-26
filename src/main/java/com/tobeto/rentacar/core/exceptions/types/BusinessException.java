@@ -1,4 +1,4 @@
-package com.tobeto.rentacar.core.exceptions;
+package com.tobeto.rentacar.core.exceptions.types;
 
 public class BusinessException extends RuntimeException {
 

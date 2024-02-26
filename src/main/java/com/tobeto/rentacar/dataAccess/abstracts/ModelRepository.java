@@ -14,5 +14,5 @@ public interface ModelRepository extends JpaRepository<Model, Integer> {
 	@Query("Select m from Model m where m.name=:name ")
 	Model findByName(String name);
 	
-	List<Model> getByName(String name);
+	List<Model> getByNameIgnoreCase(String name);
 }

@@ -16,7 +16,7 @@ import com.tobeto.rentacar.business.requests.create.brand.CreateBrandRequest;
 import com.tobeto.rentacar.business.responses.create.brand.CreateBrandResponse;
 import com.tobeto.rentacar.business.responses.get.brand.GetAllBrandResponse;
 import com.tobeto.rentacar.business.responses.get.brand.GetBrandResponse;
-import com.tobeto.rentacar.core.exceptions.BusinessException;
+import com.tobeto.rentacar.core.exceptions.types.BusinessException;
 import com.tobeto.rentacar.core.utilities.mapping.ModelMapperService;
 import com.tobeto.rentacar.core.utilities.paging.PageDto;
 import com.tobeto.rentacar.core.utilities.results.DataResult;
@@ -84,7 +84,7 @@ public class BrandManager implements BrandService {
 	}
 	
 	private void checkIfBrandNameExists(String name) {
-		Brand brand = brandRepository.getByName(name);
+		Brand brand = brandRepository.findByNameIgnoreCase(name.trim());
 		if(brand!=null) {
 			throw new BusinessException("Böyle bir marka daha önce eklendi");
 		}

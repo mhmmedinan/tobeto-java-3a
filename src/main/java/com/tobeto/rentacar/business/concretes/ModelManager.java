@@ -55,7 +55,7 @@ public class ModelManager implements ModelService {
 
 	@Override
 	public List<GetAllModelResponse> findByName(String name) {
-		List<Model> models = modelRepository.getByName(name);
+		List<Model> models = modelRepository.getByNameIgnoreCase(name.trim());
 		List<GetAllModelResponse> responses = models.stream()
 				.map(model -> mapperService.forResponse().map(model, GetAllModelResponse.class))
 				.collect(Collectors.toList());

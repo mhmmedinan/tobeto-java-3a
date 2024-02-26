@@ -7,6 +7,6 @@ import com.tobeto.rentacar.entities.concretes.Brand;
 public interface BrandRepository extends JpaRepository<Brand, Integer> {
 
 	Brand getById(int id);
-	Brand getByName(String name);
+	Brand findByNameIgnoreCase(String name);
 	
 }
