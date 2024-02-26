@@ -1,4 +1,4 @@
-package com.tobeto.rentacar.wepApi.controllers;
+package com.tobeto.rentacar.webApi.controllers;
 
 import java.util.List;
 
@@ -37,5 +37,10 @@ public class ModelsController {
 	@GetMapping("/getbyname/{name}")
 	public GetAllModelResponse getByName(@PathVariable String name) {
 		return modelService.getByName(name);
+	}
+	
+	@GetMapping("/findbyname/{name}")
+	public List<GetAllModelResponse> findByName(@PathVariable String name) {
+		return modelService.findByName(name);
 	}
 }

@@ -20,8 +20,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ModelManager implements ModelService {
 
-	private ModelRepository modelRepository;
-	private ModelMapperService mapperService;
+	private final ModelRepository modelRepository;
+	private final ModelMapperService mapperService;
 
 	@Override
 	public CreateModelResponse add(CreateModelRequest request) {
@@ -51,6 +51,15 @@ public class ModelManager implements ModelService {
 		GetAllModelResponse response = mapperService.forResponse()
 				.map(model, GetAllModelResponse.class);
 		return response;
+	}
+
+	@Override
+	public List<GetAllModelResponse> findByName(String name) {
+		List<Model> models = modelRepository.getByName(name);
+		List<GetAllModelResponse> responses = models.stream()
+				.map(model -> mapperService.forResponse().map(model, GetAllModelResponse.class))
+				.collect(Collectors.toList());
+		return responses;
 	}
 
 }

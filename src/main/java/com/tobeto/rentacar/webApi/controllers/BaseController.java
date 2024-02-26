@@ -1,4 +1,4 @@
-package com.tobeto.rentacar.wepApi.controllers;
+package com.tobeto.rentacar.webApi.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
