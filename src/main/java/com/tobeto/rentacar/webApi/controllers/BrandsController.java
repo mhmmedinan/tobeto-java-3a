@@ -14,6 +14,7 @@ import com.tobeto.rentacar.business.requests.create.brand.CreateBrandRequest;
 import com.tobeto.rentacar.business.responses.get.brand.GetBrandResponse;
 import com.tobeto.rentacar.core.utilities.paging.PageDto;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -24,7 +25,7 @@ public class BrandsController extends BaseController {
 	private BrandService brandService;
 	
 	@PostMapping()
-	public ResponseEntity<?> add(@RequestBody CreateBrandRequest request) {
+	public ResponseEntity<?> add(@RequestBody @Valid CreateBrandRequest request) {
         return handleDataResult(brandService.add(request));
 	}
 	
