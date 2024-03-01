@@ -5,7 +5,6 @@ import java.util.List;
 import com.tobeto.rentacar.business.requests.create.model.CreateModelRequest;
 import com.tobeto.rentacar.business.responses.create.model.CreateModelResponse;
 import com.tobeto.rentacar.business.responses.get.model.GetAllModelResponse;
-import com.tobeto.rentacar.entities.concretes.Model;
 
 public interface ModelService {
 

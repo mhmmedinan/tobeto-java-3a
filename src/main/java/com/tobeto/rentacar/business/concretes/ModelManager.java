@@ -46,7 +46,8 @@ public class ModelManager implements ModelService {
 	}
 
 	@Override
-	public GetAllModelResponse getByName(String name) {
+	public GetAllModelResponse getByName(String name) 
+	{
 		Model model = modelRepository.findByName(name);
 		GetAllModelResponse response = mapperService.forResponse()
 				.map(model, GetAllModelResponse.class);
@@ -54,7 +55,8 @@ public class ModelManager implements ModelService {
 	}
 
 	@Override
-	public List<GetAllModelResponse> findByName(String name) {
+	public List<GetAllModelResponse> findByName(String name) 
+	{
 		List<Model> models = modelRepository.getByNameIgnoreCase(name.trim());
 		List<GetAllModelResponse> responses = models.stream()
 				.map(model -> mapperService.forResponse().map(model, GetAllModelResponse.class))

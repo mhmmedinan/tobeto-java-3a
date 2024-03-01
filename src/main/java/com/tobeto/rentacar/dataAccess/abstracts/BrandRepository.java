@@ -8,5 +8,6 @@ public interface BrandRepository extends JpaRepository<Brand, Integer> {
 
 	Brand getById(int id);
 	Brand findByNameIgnoreCase(String name);
+
 	
 }
