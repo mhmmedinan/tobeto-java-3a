@@ -17,6 +17,7 @@ import com.tobeto.rentacar.business.responses.create.brand.CreateBrandResponse;
 import com.tobeto.rentacar.business.responses.get.brand.GetAllBrandResponse;
 import com.tobeto.rentacar.business.responses.get.brand.GetBrandResponse;
 import com.tobeto.rentacar.business.rules.BrandBusinessRules;
+import com.tobeto.rentacar.core.aspects.logging.Loggable;
 import com.tobeto.rentacar.core.utilities.mapping.ModelMapperService;
 import com.tobeto.rentacar.core.utilities.paging.PageDto;
 import com.tobeto.rentacar.core.utilities.results.DataResult;
@@ -52,6 +53,7 @@ public class BrandManager implements BrandService {
 	}
 
 	@Override
+	@Loggable
 	public DataResult<List<GetAllBrandResponse>> getAll() {
 		List<Brand> brands = brandRepository.findAll();
 		List<GetAllBrandResponse> brandResponses = brands.stream()
