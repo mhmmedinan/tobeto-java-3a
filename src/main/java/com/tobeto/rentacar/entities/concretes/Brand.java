@@ -21,15 +21,11 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class Brand extends BaseEntity<Integer> {
 
-	
-	
 	@Column(name="name")
 	private String name;
 	
 	@OneToMany(mappedBy = "brand")
 	private List<Model> models;
-	
-	
 
 }
 

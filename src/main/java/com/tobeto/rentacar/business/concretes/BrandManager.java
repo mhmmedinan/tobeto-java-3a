@@ -38,6 +38,7 @@ public class BrandManager implements BrandService {
 
 	@Override
 	public DataResult<CreateBrandResponse> add(CreateBrandRequest request) {
+		
 //		rules.checkIfBrandNameCount(request.getName());
 		rules.checkIfBrandNameExists(request.getName());
 		
