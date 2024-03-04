@@ -38,6 +38,7 @@ public class BrandManager implements BrandService {
 	private BrandBusinessRules rules;
 
 	@Override
+	@Loggable
 	public DataResult<CreateBrandResponse> add(CreateBrandRequest request) {
 		
 //		rules.checkIfBrandNameCount(request.getName());
