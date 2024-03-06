@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+
+  rentacardbdev:
+    container_name: rentacardbdev
+    image: postgres
+    ports:
+      -  "5434:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456
